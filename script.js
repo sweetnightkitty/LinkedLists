@@ -152,7 +152,23 @@ function createLinkedList() {
                 console.log(currentNode.value);
                 currentNode = currentNode.next;
             }
-        }
+        },
+
+        toString: function() {
+            let currentNode = this.firstNode;
+            let string = "";
+            while(currentNode) {
+                if(currentNode.next) {
+                    const value = `( ${currentNode.value} ) -> `;
+                    string += value;
+                } else {
+                    const value = `( ${currentNode.value} ) -> null`;
+                    string += value;
+                }
+                currentNode = currentNode.next;
+            }
+            console.log(string);
+        },
 
 
     }
