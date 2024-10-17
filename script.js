@@ -170,6 +170,29 @@ function createLinkedList() {
             console.log(string);
         },
 
+        insertAt: function(value, index) {
+            let newNode = createNode();
+            newNode.value = value;
+
+            let currentNode = this.firstNode;
+            const length = this.size();
+            let leftNode;
+            let rightNode;
+
+            for(let i = 0; i < length; i++) {
+                    if(i == (index - 1)) {
+                        leftNode = currentNode;
+                    } 
+                    if(i == index) {
+                        rightNode = currentNode;
+                    }
+                    currentNode = currentNode.next;
+            }
+
+            newNode.next = rightNode;
+            leftNode.next = newNode;
+        }
+
 
     }
 }
