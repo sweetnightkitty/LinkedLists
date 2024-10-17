@@ -9,6 +9,14 @@ function createLinkedList() {
     return {
         firstNode: null, //by default
 
+        head: function() {
+            if(!this.firstNode) {
+                console.log("List is empty");
+            } else {
+                console.log(this.firstNode.value);
+            }
+        },
+
         //Appends new value but no linking
         append: function(input) {
             let newNode = createNode();
@@ -48,7 +56,3 @@ function createLinkedList() {
 }
 
 const myList = createLinkedList();
-myList.append("john");
-myList.append("billy");
-myList.append("susan");
-myList.print();
