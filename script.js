@@ -43,6 +43,20 @@ function createLinkedList() {
             currentNode.next = newNode
         },
 
+        tail: function() {
+            let currentNode = this.firstNode;
+            if(currentNode.next == null) {
+                console.log(currentNode.value);
+                return;
+            }
+            while(currentNode) {
+                if(currentNode.next == null) {
+                    console.log(currentNode.value);
+                }
+                currentNode = currentNode.next;
+            }
+        },
+
         print: function() {
             let currentNode = this.firstNode;
             while(currentNode) {
@@ -56,3 +70,5 @@ function createLinkedList() {
 }
 
 const myList = createLinkedList();
+
+
