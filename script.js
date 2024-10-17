@@ -94,6 +94,17 @@ function createLinkedList() {
             }
         },
 
+        contains: function(value) {
+            let currentNode = this.firstNode;
+            while(currentNode) {
+                if(currentNode.value == value) {
+                    return true;
+                }
+                currentNode = currentNode.next;
+            }
+            return false;
+        },
+
 
         print: function() {
             let currentNode = this.firstNode;
