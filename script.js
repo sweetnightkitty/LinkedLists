@@ -120,6 +120,18 @@ function createLinkedList() {
 
         },
 
+        find: function(value) {
+            let currentNode = this.firstNode;
+            const length = this.size();
+            for(let i = 0; i < length; i++) {
+                if(currentNode.value == value) {
+                    return i;
+                }
+                currentNode = currentNode.next;
+            }
+            return null;
+        },
+
 
         print: function() {
             let currentNode = this.firstNode;
