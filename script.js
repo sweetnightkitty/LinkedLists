@@ -53,6 +53,19 @@ function createLinkedList() {
             currentNode.next = newNode
         },
 
+        prepend: function(input) {
+            let newNode = createNode();
+            newNode.value = input;
+
+            if(!this.firstNode) {
+                this.firstNode = newNode;
+                return;
+            }
+
+            newNode.next = this.firstNode;
+            this.firstNode = newNode;
+        },
+
         tail: function() {
             let currentNode = this.firstNode;
             if(currentNode.next == null) {
