@@ -8,12 +8,12 @@ function createNode() {
 function createLinkedList() {
     return {
         firstNode: null, //by default
+
         lastNode: function() {
             let currentNode = this.firstNode;
             while(currentNode) {
                 if(!currentNode.next) {
-                    console.log(currentNode);
-                    break;
+                    return currentNode;
                 }
                 currentNode = currentNode.next;
             }
@@ -84,11 +84,10 @@ function createLinkedList() {
         },
 
         pop: function() {
-            //Find the tail 
-            //While loop - while currentNode exists - if currentNode.next = tail - currentNode.next = null
+            const tail = this.lastNode();
             let currentNode = this.firstNode;
             while(currentNode) {
-                if(currentNode.next.value == this.tail) {
+                if(currentNode.next == tail) {
                     currentNode.next = null;
                 }
                 currentNode = currentNode.next;
