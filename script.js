@@ -21,9 +21,9 @@ function createLinkedList() {
 
         head: function() {
             if(!this.firstNode) {
-                console.log("List is empty");
+                return "List is empty";
             } else {
-                console.log(this.firstNode.value);
+                return this.firstNode.value;
             }
         },
 
@@ -32,24 +32,16 @@ function createLinkedList() {
             let newNode = createNode();
             newNode.value = input;
 
-            //If there is no value for head - this becomes the head/1st list item
-            //Next remains null
             if(!this.firstNode) {
                 this.firstNode = newNode;
                 return;
             }
 
-            //Otherwise if head is defined
-            let currentNode = this.firstNode; //start with head
+            let currentNode = this.firstNode;
             while(currentNode.next) {
-                //Essentially this will end on the last node with a next value
-                //It will then define the currentNode as that final next value
-                //Which is the final node (which has a next: null)
-                //If only head is defined currentNode remains head
                 currentNode = currentNode.next
             }
-            //changes next value from null to the appended node
-            //newNode already has a next:null value
+
             currentNode.next = newNode
         },
 
@@ -69,13 +61,12 @@ function createLinkedList() {
         tail: function() {
             let currentNode = this.firstNode;
             if(currentNode.next == null) {
-                console.log(currentNode.value);
-                return;
+                return currentNode.value;
             }
 
             while(currentNode) {
                 if(currentNode.next == null) {
-                    console.log(currentNode.value);
+                    return currentNode.value;
                 }
                 currentNode = currentNode.next;
             }
@@ -83,8 +74,7 @@ function createLinkedList() {
 
         size: function() {
             if(!this.firstNode) {
-                console.log(0);
-                return;
+                return 0;
             }
 
             let currentNode = this.firstNode;
