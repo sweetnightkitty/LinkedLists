@@ -49,12 +49,28 @@ function createLinkedList() {
                 console.log(currentNode.value);
                 return;
             }
+
             while(currentNode) {
                 if(currentNode.next == null) {
                     console.log(currentNode.value);
                 }
                 currentNode = currentNode.next;
             }
+        },
+
+        size: function() {
+            if(!this.firstNode) {
+                console.log(0);
+                return;
+            }
+
+            let currentNode = this.firstNode;
+            let total = 0;
+            while(currentNode) {
+                total++;
+                currentNode = currentNode.next;
+            }
+            console.log(total);
         },
 
         print: function() {
