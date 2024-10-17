@@ -8,6 +8,16 @@ function createNode() {
 function createLinkedList() {
     return {
         firstNode: null, //by default
+        lastNode: function() {
+            let currentNode = this.firstNode;
+            while(currentNode) {
+                if(!currentNode.next) {
+                    console.log(currentNode);
+                    break;
+                }
+                currentNode = currentNode.next;
+            }
+        },
 
         head: function() {
             if(!this.firstNode) {
@@ -72,6 +82,19 @@ function createLinkedList() {
             }
             console.log(total);
         },
+
+        pop: function() {
+            //Find the tail 
+            //While loop - while currentNode exists - if currentNode.next = tail - currentNode.next = null
+            let currentNode = this.firstNode;
+            while(currentNode) {
+                if(currentNode.next.value == this.tail) {
+                    currentNode.next = null;
+                }
+                currentNode = currentNode.next;
+            }
+        },
+
 
         print: function() {
             let currentNode = this.firstNode;
