@@ -191,8 +191,27 @@ function createLinkedList() {
 
             newNode.next = rightNode;
             leftNode.next = newNode;
-        }
+        },
 
+        removeAt: function(index) {
+            let currentNode = this.firstNode;
+            const length = this.size();
+
+            let leftNode;
+            let targetNode;
+
+            for(let i = 0; i < length; i++) {
+                if(i == (index - 1)) {
+                    leftNode = currentNode;
+                };
+                if(i == index) {
+                    targetNode = currentNode;
+                }
+                currentNode = currentNode.next;
+            }
+
+            leftNode.next = targetNode.next;
+        }
 
     }
 }
