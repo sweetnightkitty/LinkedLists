@@ -80,7 +80,7 @@ function createLinkedList() {
                 total++;
                 currentNode = currentNode.next;
             }
-            console.log(total);
+            return total;
         },
 
         pop: function() {
@@ -103,6 +103,21 @@ function createLinkedList() {
                 currentNode = currentNode.next;
             }
             return false;
+        },
+
+        at: function(index) {
+            let currentNode = this.firstNode;
+            const length = this.size();
+
+            for(let i = 0; i < length; i++) {
+                if(i == index) {
+                    return currentNode;
+                }
+                currentNode = currentNode.next;
+
+            }
+            return undefined;
+
         },
 
 
