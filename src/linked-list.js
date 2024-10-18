@@ -5,7 +5,7 @@ function createNode() {
     };
 }
 
-function createLinkedList() {
+export function createLinkedList() {
     return {
         firstNode: null, //by default
 
@@ -206,6 +206,5 @@ function createLinkedList() {
     }
 }
 
-const myList = createLinkedList();
 
 
